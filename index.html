@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Гра</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body { 
+            margin: 0; 
+            overflow: hidden; 
+            font-family: Arial, sans-serif;
+        }
+        #game-container { 
+            width: 100vw; 
+            height: 100vh; 
+        }
+        #ui {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        #score {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        #instructions {
+            font-size: 14px;
+        }
+        #win-screen {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        #win-screen h1 {
+            color: #22c55e;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 25px;
+            background: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container"></div>
+    
+    <div id="ui">
+        <div id="score">Рахунок: 0/10</div>
+        <div id="instructions">
+            <div style="font-weight: bold; margin-bottom: 5px;">Керування:</div>
+            <div>WASD або Стрілки - рух</div>
+            <div style="margin-top: 10px;">Збирайте золоті монети!</div>
+            <div>Уникайте червоних перешкод</div>
+        </div>
+    </div>
+
+    <div id="win-screen">
+        <h1>Перемога! 🎉</h1>
+        <p style="font-size: 18px;">Ви зібрали всі монети!</p>
+        <button onclick="location.reload()">Грати знову</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
